@@ -6,15 +6,15 @@ section .text
 [global _start]
 
 _start:
-        ; mov rsp, stack_top
-        ; xor rbp, rbp
+        mov rsp, stack_top
+        xor rbp, rbp
 
-        ; mov rsi, msg
-        ; call print
+        mov rsi, msg
+        call print
 
         ; main() del kernel.c
-        ; extern kernel
-        ; call kernel
+        extern kernel
+        call kernel
 
 .hang:
         hlt
