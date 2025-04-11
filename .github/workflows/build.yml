@@ -15,3 +15,9 @@ jobs:
 
       - name: Ejecutar `make re`
         run: make clean all
+
+      - name: Subir os.bin
+        uses: actions/upload-artifact@v3
+        with:
+          name: os.bin
+          path: build/os.bin
