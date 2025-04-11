@@ -1,0 +1,17 @@
+name: Make Rebuild
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar herramientas necesarias
+        run: sudo apt update && sudo apt install -y nasm gcc make
+
+      - name: Ejecutar `make re`
+        run: make clean all
