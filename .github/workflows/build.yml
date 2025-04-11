@@ -17,7 +17,7 @@ jobs:
         run: make clean all
 
       - name: Qemu
-        run: qemu-system-x86_64 -drive format=raw,file=build/os.bin -nographic -serial mon:stdio -no-reboot -m 512
+        run: qemu-system-x86_64 -drive format=raw,file=build/os.img -nographic -serial mon:stdio -no-reboot -m 512
        
 #      - name: Subir os.bin
 #        uses: actions/upload-artifact@v4
