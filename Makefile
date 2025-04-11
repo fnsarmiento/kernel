@@ -20,7 +20,7 @@ BOOT_BIN = $(BUILD_DIR)/bootloader.bin
 LONG_BIN = $(BUILD_DIR)/long_mode.bin
 KERNEL_BIN = $(BUILD_DIR)/kernel.bin
 
-OS_IMAGE = $(BUILD_DIR)/os.bin
+OS_IMAGE = $(BUILD_DIR)/os.img
 LINKER_SRC = $(SRC_DIR)/linker.ld
 
 KERNEL_SIZE = $(shell stat -c%s $(KERNEL_BIN))
