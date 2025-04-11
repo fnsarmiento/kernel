@@ -11,13 +11,16 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Instalar herramientas necesarias
-        run: sudo apt update && sudo apt install -y nasm gcc make
+        run: sudo apt update && sudo apt install -y nasm gcc make qemu-system-x86
 
       - name: Ejecutar `make re`
         run: make clean all
 
-      - name: Subir os.bin
-        uses: actions/upload-artifact@v4
-        with:
-          name: os-bin
-          path: build/os.bin
+      - name: Qemu
+        run: qemu-system-x86_64 -drive format=raw,file=build/os.bin -nographic -serial mon:stdio -no-reboot -m 512
+       
+#      - name: Subir os.bin
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: os-bin
+#          path: build/os.bin
